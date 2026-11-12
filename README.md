@@ -12,7 +12,7 @@
 
 需要 Python、PyTorch、transformers、datasets、peft 和 accelerate，并提前准备模型本地缓存。依赖版本尚未整理为可复现环境。
 
-数据、模型、Adapter 权重和检查点不随仓库上传。数据相关脚本需要自行在脚本目录准备 `train.jsonl`，每行包含 `instruction` 和 `output` 两个字符串字段。
+仓库附带 `train.jsonl`，包含 3 条用于演示的问答文本，每行包含 `instruction` 和 `output` 两个字符串字段。模型、Adapter 权重和检查点不随仓库上传。
 
 运行前请核对路径：基础推理脚本使用个人本地模型路径；`peft_lora.py` 将 Adapter 保存到当前工作目录，`load_adapter.py` 从脚本旁的 `lora_adapter` 加载；`infer.py` 需要 `train.py` 生成的 `d26_lora_adapter`；恢复训练需要 `huggingface_outputs/checkpoint-1`。
 
